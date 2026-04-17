@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workouts - FitZone</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/workouts.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>FitZone</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="workouts.html" class="active">Workouts</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section for Workouts -->
+    <header class="workouts-hero">
+        <div class="hero-content">
+            <h2>Workout Programs</h2>
+            <p>Choose your muscle group and follow our step-by-step guided workouts</p>
+        </div>
+    </header>
+
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-consent" class="cookie-consent hidden">
+        <div class="cookie-content">
+            <p>We use cookies to save your preferences and workout history. By continuing, you accept our cookie policy.</p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="btn btn-primary">Accept</button>
+                <button id="decline-cookies" class="btn btn-secondary">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Auto-Rotating Carousel Banner -->
+    <section class="carousel-section">
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="carousel-slides">
+                    <div class="carousel-slide">
+                        <img src="images/workouts/chest.jpg" alt="Chest Workout">
+                        <div class="carousel-caption">Build a Powerful Chest</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/workouts/back.jpg" alt="Back Workout">
+                        <div class="carousel-caption">Strengthen Your Back</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/workouts/legs.jpg" alt="Legs Workout">
+                        <div class="carousel-caption">Power Up Your Legs</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/workouts/shoulders.jpg" alt="Shoulders Workout">
+                        <div class="carousel-caption">Shape Your Shoulders</div>
+                    </div>
+                </div>
+                <button class="carousel-prev">❮</button>
+                <button class="carousel-next">❯</button>
+                <div class="carousel-dots">
+                    <span class="dot active" data-slide="0"></span>
+                    <span class="dot" data-slide="1"></span>
+                    <span class="dot" data-slide="2"></span>
+                    <span class="dot" data-slide="3"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <!-- Muscle Group Buttons -->
+        <section class="muscle-groups-section">
+            <div class="container">
+                <h2 class="section-title">Select Muscle Group</h2>
+                <div class="muscle-buttons">
+                    <button class="muscle-btn active" data-muscle="chest">
+                        <span class="muscle-icon">💪</span>
+                        <span>Chest</span>
+                    </button>
+                    <button class="muscle-btn" data-muscle="back">
+                        <span class="muscle-icon">🔙</span>
+                        <span>Back</span>
+                    </button>
+                    <button class="muscle-btn" data-muscle="legs">
+                        <span class="muscle-icon">🦵</span>
+                        <span>Legs</span>
+                    </button>
+                    <button class="muscle-btn" data-muscle="shoulders">
+                        <span class="muscle-icon">⬆️</span>
+                        <span>Shoulders</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accordion Workout Details -->
+        <section class="workout-accordion-section">
+            <div class="container">
+                <div class="accordion" id="chest-accordion" data-muscle="chest">
+                    <h3 class="section-title">Chest Workout - Step by Step</h3>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Exercise 1: Bench Press</h4>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="exercise-details">
+                                <p><strong>Sets:</strong> 4</p>
+                                <p><strong>Reps:</strong> 8-10</p>
+                                <p><strong>Rest:</strong> 90-120 seconds</p>
+                                <p><strong>Instructions:</strong> Lie flat on bench, grip the bar with hands shoulder-width apart. Lower the bar to your chest and press it back up explosively.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Exercise 2: Incline Dumbbell Press</h4>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="exercise-details">
+                                <p><strong>Sets:</strong> 3</p>
+                                <p><strong>Reps:</strong> 10-12</p>
+                                <p><strong>Rest:</strong> 60-90 seconds</p>
+                                <p><strong>Instructions:</strong> Sit on an incline bench set at 45 degrees. Press dumbbells upward and slightly forward with controlled movement.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Exercise 3: Cable Flyes</h4>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="exercise-details">
+                                <p><strong>Sets:</strong> 3</p>
+                                <p><strong>Reps:</strong> 12-15</p>
+                                <p><strong>Rest:</strong> 45-60 seconds</p>
+                                <p><strong>Instructions:</strong> Stand on a machine, keep a slight bend in your elbows, and bring your hands together in a controlled arc motion.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion" id="back-accordion" data-muscle="back" style="display: none;">
+                    <h3 class="section-title">Back Workout - Step by Step</h3>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Exercise 1: Deadlift</h4>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="exercise-details">
+                                <p><strong>Sets:</strong> 4</p>
+                                <p><strong>Reps:</strong> 6-8</p>
+                                <p><strong>Rest:</strong> 120-150 seconds</p>
+                                <p><strong>Instructions:</strong> Stand with feet hip-width apart, grip the bar at shoulder-width. Lift with your legs, keeping your back straight.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Exercise 2: Bent-Over Rows</h4>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="exercise-details">
+                                <p><strong>Sets:</strong> 3</p>
+                                <p><strong>Reps:</strong> 10-12</p>
+                                <p><strong>Rest:</strong> 90-120 seconds</p>
+                                <p><strong>Instructions:</strong> Bend forward at hips with a slight knee bend. Pull the bar up to your lower chest with elbows close to your body.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Exercise 3: Pull-ups</h4>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="exercise-details">
+                                <p><strong>Sets:</strong> 3</p>
+                                <p><strong>Reps:</strong> 8-12</p>
+                                <p><strong>Rest:</strong> 90-120 seconds</p>
+                                <p><strong>Instructions:</strong> Grip the bar with hands slightly wider than shoulder-width. Pull yourself up until chin is over the bar, then lower with control.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion" id="legs-accordion" data-muscle="legs" style="display: none;">
+                    <h3 class="section-title">Legs Workout - Step by Step</h3>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Exercise 1: Squats</h4>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="exercise-details">
+                                <p><strong>Sets:</strong> 4</p>
+                                <p><strong>Reps:</strong> 8-10</p>
+                                <p><strong>Rest:</strong> 120-150 seconds</p>
+                                <p><strong>Instructions:</strong> Place bar on shoulders, feet shoulder-width apart. Lower your body as if sitting in a chair, then push back up.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Exercise 2: Leg Press</h4>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="exercise-details">
+                                <p><strong>Sets:</strong> 3</p>
+                                <p><strong>Reps:</strong> 10-12</p>
+                                <p><strong>Rest:</strong> 90-120 seconds</p>
+                                <p><strong>Instructions:</strong> Sit on the machine with feet on the platform at shoulder-width. Push the platform away from you, then return with control.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Exercise 3: Leg Curls</h4>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="exercise-details">
+                                <p><strong>Sets:</strong> 3</p>
+                                <p><strong>Reps:</strong> 12-15</p>
+                                <p><strong>Rest:</strong> 60-90 seconds</p>
+                                <p><strong>Instructions:</strong> Lie face down on the machine. Curl your legs up towards your glutes, squeezing at the top before lowering.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion" id="shoulders-accordion" data-muscle="shoulders" style="display: none;">
+                    <h3 class="section-title">Shoulders Workout - Step by Step</h3>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Exercise 1: Military Press</h4>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="exercise-details">
+                                <p><strong>Sets:</strong> 4</p>
+                                <p><strong>Reps:</strong> 8-10</p>
+                                <p><strong>Rest:</strong> 90-120 seconds</p>
+                                <p><strong>Instructions:</strong> Stand with the bar at shoulder height. Press the bar overhead until arms are fully extended, then lower back down.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Exercise 2: Lateral Raises</h4>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="exercise-details">
+                                <p><strong>Sets:</strong> 3</p>
+                                <p><strong>Reps:</strong> 12-15</p>
+                                <p><strong>Rest:</strong> 60-90 seconds</p>
+                                <p><strong>Instructions:</strong> Hold dumbbells at your sides with arms slightly bent. Raise them out to the sides until parallel with the floor.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <h4>Exercise 3: Reverse Peck Deck</h4>
+                            <span class="accordion-toggle">+</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="exercise-details">
+                                <p><strong>Sets:</strong> 3</p>
+                                <p><strong>Reps:</strong> 12-15</p>
+                                <p><strong>Rest:</strong> 60-90 seconds</p>
+                                <p><strong>Instructions:</strong> Sit on the machine facing inward. Pull the handles toward you in a controlled arc, squeezing your rear shoulders.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5>FitZone</h5>
+                    <p>Your Ultimate Fitness Destination</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="workouts.html">Workouts</a></li>
+                        <li><a href="join.html">Join</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Contact</h5>
+                    <p>Email: info@fitzone.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FitZone. All rights reserved.</p>
+                <p id="current-date-time"></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/workouts.js"></script>
+</body>
+</html>
