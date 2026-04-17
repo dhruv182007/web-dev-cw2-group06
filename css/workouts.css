@@ -1,0 +1,519 @@
+/* ============================================
+   FITZONE - WORKOUTS CSS
+   Muscle Buttons, Accordion, Carousel, Cookie Consent
+   ============================================ */
+
+/* ============================================
+   IMPORT MAIN STYLES
+   ============================================ */
+
+/* CSS Variables are inherited from styles.css */
+
+/* ============================================
+   WORKOUTS HERO SECTION
+   ============================================ */
+
+.workouts-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    padding: 6rem var(--spacing-md);
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+.workouts-hero .hero-content h2 {
+    color: var(--text-light);
+    font-size: 3rem;
+    margin-bottom: var(--spacing-md);
+    animation: slideInTop 0.8s ease;
+}
+
+.workouts-hero .hero-content p {
+    color: var(--text-light);
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin: 0 auto;
+    animation: slideInBottom 0.8s ease 0.2s backwards;
+}
+
+/* ============================================
+   COOKIE CONSENT BANNER
+   ============================================ */
+
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--dark-bg);
+    color: var(--text-light);
+    padding: var(--spacing-lg);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    animation: slideInBottom 0.4s ease;
+}
+
+.cookie-consent.hidden {
+    display: none;
+}
+
+.cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--spacing-lg);
+}
+
+.cookie-content p {
+    flex: 1;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    white-space: nowrap;
+}
+
+.cookie-buttons .btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .cookie-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-md);
+    }
+
+    .cookie-buttons {
+        width: 100%;
+    }
+
+    .cookie-buttons .btn {
+        flex: 1;
+    }
+}
+
+/* ============================================
+   CAROUSEL SECTION
+   ============================================ */
+
+.carousel-section {
+    background: var(--secondary-color);
+    padding: var(--spacing-lg) 0;
+    overflow: hidden;
+}
+
+.carousel-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.carousel-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+}
+
+.carousel-slides {
+    display: flex;
+    position: relative;
+    left: 0;
+    transition: left 0.5s ease;
+    width: 400%;
+}
+
+.carousel-slide {
+    position: relative;
+    width: 100%;
+    min-height: 300px;
+    overflow: hidden;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
+    color: var(--text-light);
+    padding: var(--spacing-lg) var(--spacing-md);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Carousel Navigation Buttons */
+.carousel-prev,
+.carousel-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    color: var(--text-light);
+    font-size: 2rem;
+    padding: var(--spacing-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    border-radius: 4px;
+}
+
+.carousel-prev {
+    left: var(--spacing-md);
+}
+
+.carousel-next {
+    right: var(--spacing-md);
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Carousel Dots */
+.carousel-dots {
+    position: absolute;
+    bottom: var(--spacing-md);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--spacing-sm);
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--accent-color);
+    transform: scale(1.2);
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+    .carousel-slide {
+        min-height: 200px;
+    }
+
+    .carousel-slide img {
+        height: 200px;
+    }
+
+    .carousel-caption {
+        font-size: 1.1rem;
+    }
+
+    .carousel-prev,
+    .carousel-next {
+        font-size: 1.5rem;
+        padding: var(--spacing-sm);
+    }
+}
+
+/* ============================================
+   MUSCLE GROUPS SECTION
+   ============================================ */
+
+.muscle-groups-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background: var(--light-bg);
+}
+
+.muscle-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.muscle-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-lg);
+    background: var(--text-light);
+    border: 3px solid transparent;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    box-shadow: var(--shadow-md);
+    animation: slideInBottom 0.4s ease backwards;
+}
+
+.muscle-btn:nth-child(1) { animation-delay: 0s; }
+.muscle-btn:nth-child(2) { animation-delay: 0.1s; }
+.muscle-btn:nth-child(3) { animation-delay: 0.2s; }
+.muscle-btn:nth-child(4) { animation-delay: 0.3s; }
+
+.muscle-icon {
+    font-size: 2rem;
+    display: block;
+}
+
+.muscle-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.muscle-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), #ff8a50);
+    color: var(--text-light);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 20px rgba(255, 107, 53, 0.4);
+    animation: pulse 0.6s ease;
+}
+
+/* ============================================
+   ACCORDION SECTION
+   ============================================ */
+
+.workout-accordion-section {
+    padding: var(--spacing-xl) var(--spacing-md);
+    background: var(--text-light);
+}
+
+.accordion {
+    max-width: 800px;
+    margin: var(--spacing-lg) auto;
+}
+
+.accordion .section-title {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    animation: slideInTop 0.6s ease;
+}
+
+.accordion-item {
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    animation: slideInBottom 0.4s ease backwards;
+}
+
+.accordion-item:nth-child(1) { animation-delay: 0s; }
+.accordion-item:nth-child(2) { animation-delay: 0.1s; }
+.accordion-item:nth-child(3) { animation-delay: 0.2s; }
+
+.accordion-header {
+    background: linear-gradient(135deg, var(--secondary-color), #005a9c);
+    color: var(--text-light);
+    padding: var(--spacing-md);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.accordion-header:hover {
+    background: linear-gradient(135deg, #004e89, #0070c0);
+    transform: translateX(5px);
+}
+
+.accordion-header h4 {
+    margin: 0;
+    font-size: 1.2rem;
+    flex: 1;
+}
+
+.accordion-toggle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+    color: var(--accent-color);
+}
+
+.accordion-header:hover .accordion-toggle {
+    transform: scale(1.2);
+}
+
+.accordion-content {
+    display: none;
+    background: var(--light-bg);
+    padding: var(--spacing-lg);
+    max-height: 500px;
+    overflow-y: auto;
+    animation: slideInTop 0.3s ease;
+}
+
+.accordion-content.expanded {
+    display: block;
+}
+
+.exercise-details {
+    line-height: 1.8;
+}
+
+.exercise-details p {
+    margin: var(--spacing-sm) 0;
+    color: var(--text-dark);
+}
+
+.exercise-details strong {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.exercise-details p:first-child {
+    margin-top: 0;
+}
+
+.exercise-details p:last-child {
+    margin-bottom: 0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .workouts-hero .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    .workouts-hero .hero-content p {
+        font-size: 1rem;
+    }
+
+    .muscle-buttons {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-sm);
+    }
+
+    .muscle-btn {
+        padding: var(--spacing-md);
+        font-size: 0.9rem;
+    }
+
+    .accordion-header {
+        padding: var(--spacing-md);
+    }
+
+    .accordion-header h4 {
+        font-size: 1rem;
+    }
+
+    .accordion-content {
+        padding: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .workouts-hero {
+        padding: 3rem var(--spacing-sm);
+    }
+
+    .workouts-hero .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .workouts-hero .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .muscle-buttons {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
+    }
+
+    .muscle-btn {
+        padding: var(--spacing-md);
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .muscle-icon {
+        font-size: 1.5rem;
+    }
+
+    .accordion {
+        margin: var(--spacing-md) auto;
+    }
+
+    .carousel-wrapper {
+        border-radius: 0;
+    }
+
+    .carousel-prev,
+    .carousel-next {
+        font-size: 1.2rem;
+        padding: var(--spacing-xs);
+    }
+
+    .cookie-content {
+        padding: var(--spacing-md);
+    }
+
+    .cookie-content p {
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
+   DARK MODE SUPPORT
+   ============================================ */
+
+body.dark-mode .accordion-header {
+    background: linear-gradient(135deg, #1a4d7a, #0d3a5c);
+}
+
+body.dark-mode .accordion-header:hover {
+    background: linear-gradient(135deg, #0d3a5c, #1a4d7a);
+}
+
+body.dark-mode .accordion-content {
+    background: var(--dark-bg);
+    color: var(--text-light);
+}
+
+body.dark-mode .exercise-details strong {
+    color: var(--accent-color);
+}
+
+body.dark-mode .muscle-btn {
+    background: #2a2a2a;
+    color: var(--text-light);
+    border-color: var(--primary-color);
+}
+
+body.dark-mode .muscle-btn:hover {
+    background: #3a3a3a;
+}
