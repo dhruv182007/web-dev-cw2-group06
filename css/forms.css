@@ -1,0 +1,640 @@
+/* ============================================
+   FITZONE - FORM STYLES
+   Form & Validation Styles, Error States
+   ============================================ */
+
+/* ============================================
+   SKIP LINKS
+   ============================================ */
+
+.skip-link {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+    z-index: 999;
+    padding: var(--spacing-sm);
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    text-decoration: none;
+    border-radius: var(--border-radius);
+}
+
+.skip-link:focus {
+    top: 10px;
+    left: 10px;
+    outline: 3px solid var(--accent-color);
+}
+
+/* ============================================
+   FORM CONTAINER & LAYOUT
+   ============================================ */
+
+.form-container {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--light-bg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.form-wrapper {
+    background-color: var(--text-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.section-title {
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+}
+
+/* ============================================
+   FIELDSET & LEGEND
+   ============================================ */
+
+fieldset {
+    border: none;
+    padding: var(--spacing-lg) 0;
+    margin: 0;
+    border-bottom: 2px solid var(--border-color);
+}
+
+fieldset:last-of-type {
+    border-bottom: none;
+}
+
+.form-legend {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    display: block;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: var(--spacing-sm);
+}
+
+/* ============================================
+   FORM MEMBERSHIP OPTIONS
+   ============================================ */
+
+.membership-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-md);
+}
+
+.membership-option {
+    padding: var(--spacing-md);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: var(--text-light);
+}
+
+.membership-option:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(255, 107, 53, 0.05);
+    box-shadow: var(--shadow-sm);
+}
+
+.membership-option input[type="radio"] {
+    margin-right: var(--spacing-sm);
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+    vertical-align: middle;
+}
+
+.membership-option input[type="radio"]:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+.membership-option label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+    display: inline;
+    cursor: pointer;
+}
+
+.plan-description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: var(--spacing-sm);
+    margin-left: 26px;
+    line-height: 1.5;
+}
+
+.membership-option input[type="radio"]:checked + label {
+    color: var(--primary-color);
+}
+
+.membership-option input[type="radio"]:checked ~ .plan-description {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+/* ============================================
+   FORM GROUPS & FIELDS
+   ============================================ */
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.form-row .form-group {
+    margin-bottom: 0;
+}
+
+label {
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1rem;
+}
+
+.required {
+    color: var(--danger-color);
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+/* ============================================
+   INPUT FIELDS & TEXTAREA
+   ============================================ */
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+textarea,
+select {
+    padding: var(--spacing-sm);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-family: var(--font-primary);
+    transition: all 0.3s ease;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+textarea {
+    resize: vertical;
+    font-family: var(--font-primary);
+    line-height: 1.5;
+}
+
+/* ============================================
+   VALIDATION STATES
+   ============================================ */
+
+/* Valid State */
+input.valid:not(:placeholder-shown),
+select.valid,
+textarea.valid:not(:placeholder-shown) {
+    border-color: var(--success-color);
+    background-image: linear-gradient(var(--text-light), var(--text-light)),
+                      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%2327ae60" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>');
+    background-size: 20px 20px;
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    padding-right: 40px;
+}
+
+/* Invalid State */
+input.invalid,
+select.invalid,
+textarea.invalid {
+    border-color: var(--danger-color);
+    background-color: rgba(231, 76, 60, 0.05);
+}
+
+input.invalid:focus,
+select.invalid:focus,
+textarea.invalid:focus {
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+}
+
+/* Error Message */
+.error-message {
+    color: var(--danger-color);
+    font-size: 0.85rem;
+    margin-top: var(--spacing-xs);
+    display: none;
+    font-weight: 500;
+}
+
+.error-message.show {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   CHECKBOX & RADIO STYLING
+   ============================================ */
+
+.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    margin-right: var(--spacing-sm);
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+    vertical-align: middle;
+}
+
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+.checkbox-group label {
+    margin-bottom: 0;
+    cursor: pointer;
+    flex: 1;
+}
+
+/* ============================================
+   BMI WIDGET STYLES
+   ============================================ */
+
+.bmi-widget {
+    background-color: #f9f9f9;
+    border: 2px dashed var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+#calculate-bmi {
+    align-self: flex-start;
+}
+
+.bmi-result {
+    padding: var(--spacing-md);
+    background-color: var(--light-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: var(--border-radius);
+}
+
+.bmi-result p {
+    margin: var(--spacing-xs) 0;
+    font-size: 1rem;
+}
+
+#bmi-value {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+#bmi-category {
+    font-weight: 600;
+    color: var(--secondary-color);
+}
+
+.bmi-result.underweight #bmi-category {
+    color: #3498db;
+}
+
+.bmi-result.normal #bmi-category {
+    color: var(--success-color);
+}
+
+.bmi-result.overweight #bmi-category {
+    color: var(--accent-color);
+}
+
+.bmi-result.obese #bmi-category {
+    color: var(--danger-color);
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-family: var(--font-primary);
+}
+
+.btn:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background-color: #ff5722;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+.btn-secondary:hover {
+    background-color: #003d6b;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-secondary:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+.btn-large {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: 1.1rem;
+}
+
+.btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ============================================
+   FORM ACTIONS
+   ============================================ */
+
+.form-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 2px solid var(--border-color);
+}
+
+.form-actions .btn {
+    flex: 1;
+    max-width: 200px;
+}
+
+/* ============================================
+   SUCCESS MESSAGE
+   ============================================ */
+
+.success-message {
+    background-color: rgba(39, 174, 96, 0.1);
+    border: 2px solid var(--success-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.success-message h3 {
+    color: var(--success-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.success-message p {
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-sm);
+}
+
+.submitted-data {
+    background-color: var(--text-light);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-top: var(--spacing-md);
+    border-left: 4px solid var(--primary-color);
+}
+
+.submitted-data h4 {
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.submitted-data p {
+    margin: var(--spacing-xs) 0;
+    font-size: 0.95rem;
+}
+
+.submitted-data strong {
+    color: var(--primary-color);
+}
+
+/* ============================================
+   MEMBERSHIP FORM
+   ============================================ */
+
+.membership-form {
+    background-color: var(--text-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .form-container {
+        padding: var(--spacing-lg) 0;
+    }
+
+    .form-wrapper {
+        padding: var(--spacing-md);
+    }
+
+    .membership-options {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        max-width: 100%;
+    }
+
+    .section-title {
+        font-size: var(--font-size-xl);
+    }
+
+    .form-legend {
+        font-size: 1rem;
+    }
+
+    label {
+        font-size: 0.95rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    textarea,
+    select {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: var(--spacing-md) 0;
+    }
+
+    .form-wrapper,
+    .membership-form {
+        padding: var(--spacing-md);
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .form-legend {
+        font-size: 0.95rem;
+    }
+
+    fieldset {
+        padding: var(--spacing-md) 0;
+    }
+
+    .membership-options {
+        gap: var(--spacing-sm);
+    }
+
+    .membership-option {
+        padding: var(--spacing-sm);
+    }
+
+    input.valid:not(:placeholder-shown) {
+        padding-right: 35px;
+        background-size: 18px 18px;
+        background-position: right 8px center;
+    }
+}
+
+/* ============================================
+   HIGH CONTRAST MODE
+   ============================================ */
+
+@media (prefers-contrast: more) {
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    input[type="number"],
+    textarea,
+    select {
+        border-width: 3px;
+    }
+
+    .form-legend {
+        border-bottom-width: 3px;
+    }
+
+    button {
+        border: 2px solid currentColor;
+    }
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

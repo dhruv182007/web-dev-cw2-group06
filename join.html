@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join FitZone - Membership Registration</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/forms.css">
+</head>
+<body>
+    <!-- Skip Links -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#form-section" class="skip-link">Skip to membership form</a>
+
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="Main navigation">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <h1>FitZone</h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="workouts.html">Workouts</a></li>
+                    <li><a href="join.html" class="active" aria-current="page">Join</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h2>Join FitZone Today</h2>
+            <p>Start your fitness journey with our flexible membership plans</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Membership Form Section -->
+        <section id="form-section" class="form-container">
+            <div class="container">
+                <h2 class="section-title">Membership Registration</h2>
+
+                <!-- Membership Plan Selection -->
+                <div class="form-wrapper">
+                    <fieldset>
+                        <legend class="form-legend">Select Your Membership Plan</legend>
+                        <div class="membership-options">
+                            <div class="membership-option">
+                                <input type="radio" id="plan-basic" name="membership_plan" value="basic" required aria-describedby="plan-basic-desc">
+                                <label for="plan-basic">Basic - $29/month</label>
+                                <p id="plan-basic-desc" class="plan-description">Access to gym, 5 group classes/month, basic support</p>
+                            </div>
+                            <div class="membership-option">
+                                <input type="radio" id="plan-premium" name="membership_plan" value="premium" aria-describedby="plan-premium-desc">
+                                <label for="plan-premium">Premium - $59/month (Most Popular)</label>
+                                <p id="plan-premium-desc" class="plan-description">Unlimited gym access, unlimited classes, 2 personal training sessions/month, nutrition plan</p>
+                            </div>
+                            <div class="membership-option">
+                                <input type="radio" id="plan-elite" name="membership_plan" value="elite" aria-describedby="plan-elite-desc">
+                                <label for="plan-elite">Elite - $99/month</label>
+                                <p id="plan-elite-desc" class="plan-description">24/7 gym access, unlimited classes & sessions, dedicated personal trainer, custom nutrition plan, VIP support</p>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <!-- Registration Form -->
+                <form id="membership-form" class="membership-form" novalidate>
+                    <!-- Personal Information -->
+                    <fieldset>
+                        <legend class="form-legend">Personal Information</legend>
+
+                        <div class="form-group">
+                            <label for="first-name">First Name <span class="required" aria-label="required">*</span></label>
+                            <input
+                                type="text"
+                                id="first-name"
+                                name="first_name"
+                                placeholder="Enter your first name"
+                                required
+                                aria-required="true"
+                                aria-describedby="first-name-error">
+                            <span id="first-name-error" class="error-message" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last-name">Last Name <span class="required" aria-label="required">*</span></label>
+                            <input
+                                type="text"
+                                id="last-name"
+                                name="last_name"
+                                placeholder="Enter your last name"
+                                required
+                                aria-required="true"
+                                aria-describedby="last-name-error">
+                            <span id="last-name-error" class="error-message" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required" aria-label="required">*</span></label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="example@email.com"
+                                required
+                                aria-required="true"
+                                aria-describedby="email-error">
+                            <span id="email-error" class="error-message" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number <span class="required" aria-label="required">*</span></label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="(555) 123-4567"
+                                pattern="[\d\s\-\+\(\)]+"
+                                required
+                                aria-required="true"
+                                aria-describedby="phone-error">
+                            <span id="phone-error" class="error-message" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="dob">Date of Birth <span class="required" aria-label="required">*</span></label>
+                            <input
+                                type="date"
+                                id="dob"
+                                name="dob"
+                                required
+                                aria-required="true"
+                                aria-describedby="dob-error">
+                            <span id="dob-error" class="error-message" role="alert"></span>
+                        </div>
+                    </fieldset>
+
+                    <!-- Health & Fitness Information -->
+                    <fieldset>
+                        <legend class="form-legend">Health & Fitness Information</legend>
+
+                        <div class="form-group">
+                            <label for="height">Height (cm) <span class="required" aria-label="required">*</span></label>
+                            <input
+                                type="number"
+                                id="height"
+                                name="height"
+                                placeholder="170"
+                                min="50"
+                                max="300"
+                                required
+                                aria-required="true"
+                                aria-describedby="height-error">
+                            <span id="height-error" class="error-message" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="weight">Weight (kg) <span class="required" aria-label="required">*</span></label>
+                            <input
+                                type="number"
+                                id="weight"
+                                name="weight"
+                                placeholder="70"
+                                min="20"
+                                max="300"
+                                step="0.1"
+                                required
+                                aria-required="true"
+                                aria-describedby="weight-error">
+                            <span id="weight-error" class="error-message" role="alert"></span>
+                        </div>
+
+                        <!-- BMI Calculator Widget -->
+                        <div id="bmi-widget" class="bmi-widget" aria-live="polite" aria-label="BMI Calculator">
+                            <button type="button" id="calculate-bmi" class="btn btn-secondary">Calculate BMI</button>
+                            <div id="bmi-result" class="bmi-result" style="display: none;">
+                                <p>Your BMI: <strong id="bmi-value"></strong></p>
+                                <p id="bmi-category"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fitness-level">Current Fitness Level <span class="required" aria-label="required">*</span></label>
+                            <select
+                                id="fitness-level"
+                                name="fitness_level"
+                                required
+                                aria-required="true"
+                                aria-describedby="fitness-level-error">
+                                <option value="">-- Select a level --</option>
+                                <option value="beginner">Beginner</option>
+                                <option value="intermediate">Intermediate</option>
+                                <option value="advanced">Advanced</option>
+                                <option value="professional">Professional</option>
+                            </select>
+                            <span id="fitness-level-error" class="error-message" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="medical-conditions">Medical Conditions or Injuries (Optional)</label>
+                            <textarea
+                                id="medical-conditions"
+                                name="medical_conditions"
+                                placeholder="List any medical conditions or injuries to help customize your experience"
+                                aria-describedby="medical-conditions-error"
+                                rows="4"></textarea>
+                            <span id="medical-conditions-error" class="error-message" role="alert"></span>
+                        </div>
+                    </fieldset>
+
+                    <!-- Address Information -->
+                    <fieldset>
+                        <legend class="form-legend">Address Information</legend>
+
+                        <div class="form-group">
+                            <label for="address">Street Address <span class="required" aria-label="required">*</span></label>
+                            <input
+                                type="text"
+                                id="address"
+                                name="address"
+                                placeholder="123 Main Street"
+                                required
+                                aria-required="true"
+                                aria-describedby="address-error">
+                            <span id="address-error" class="error-message" role="alert"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">City <span class="required" aria-label="required">*</span></label>
+                                <input
+                                    type="text"
+                                    id="city"
+                                    name="city"
+                                    placeholder="City"
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="city-error">
+                                <span id="city-error" class="error-message" role="alert"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="state">State <span class="required" aria-label="required">*</span></label>
+                                <input
+                                    type="text"
+                                    id="state"
+                                    name="state"
+                                    placeholder="State"
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="state-error">
+                                <span id="state-error" class="error-message" role="alert"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="postal-code">Postal Code <span class="required" aria-label="required">*</span></label>
+                                <input
+                                    type="text"
+                                    id="postal-code"
+                                    name="postal_code"
+                                    placeholder="12345"
+                                    pattern="[\d\-]+"
+                                    required
+                                    aria-required="true"
+                                    aria-describedby="postal-code-error">
+                                <span id="postal-code-error" class="error-message" role="alert"></span>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Agreements -->
+                    <fieldset>
+                        <legend class="form-legend">Agreements & Preferences</legend>
+
+                        <div class="form-group checkbox-group">
+                            <input
+                                type="checkbox"
+                                id="terms"
+                                name="terms"
+                                required
+                                aria-required="true"
+                                aria-describedby="terms-error">
+                            <label for="terms">I agree to the Terms & Conditions and Health & Safety Waiver <span class="required" aria-label="required">*</span></label>
+                            <span id="terms-error" class="error-message" role="alert"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input
+                                type="checkbox"
+                                id="privacy"
+                                name="privacy"
+                                required
+                                aria-required="true"
+                                aria-describedby="privacy-error">
+                            <label for="privacy">I agree to the Privacy Policy <span class="required" aria-label="required">*</span></label>
+                            <span id="privacy-error" class="error-message" role="alert"></span>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input
+                                type="checkbox"
+                                id="newsletter"
+                                name="newsletter">
+                            <label for="newsletter">I would like to receive promotional emails and updates (Optional)</label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary btn-large">Complete Registration</button>
+                        <button type="reset" class="btn btn-secondary btn-large">Clear Form</button>
+                    </div>
+                </form>
+
+                <!-- Success Message -->
+                <div id="success-message" class="success-message" role="alert" aria-live="polite" style="display: none;">
+                    <h3>Registration Successful!</h3>
+                    <p>Welcome to FitZone! Check your email for confirmation.</p>
+                    <div id="submitted-data" class="submitted-data"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5>FitZone</h5>
+                    <p>Your Ultimate Fitness Destination</p>
+                </div>
+                <div class="footer-section">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="classes.html">Classes</a></li>
+                        <li><a href="workouts.html">Workouts</a></li>
+                        <li><a href="join.html">Join</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h5>Contact</h5>
+                    <p>Email: info@fitzone.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FitZone. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/bmi.js"></script>
+    <script src="js/validate.js"></script>
+</body>
+</html>
